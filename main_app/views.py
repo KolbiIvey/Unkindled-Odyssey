@@ -8,20 +8,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-
-
-
-
-
-
-
 def home(request):
   return render(request, 'home.html')
 
 
 def about(request):
   return render(request, 'about.html')
-
 
 
 @login_required
@@ -37,7 +29,6 @@ def characters_detail(request, character_id):
     'character': character
   })
   
-
 
 def signup(request):
   error_message = ''
@@ -67,5 +58,10 @@ class CharacterCreate(CreateView):
   def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+  
+
+def character_story(request, character_id):
+    pass
+  
 
     
