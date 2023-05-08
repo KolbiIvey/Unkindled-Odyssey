@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Character
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
@@ -19,6 +19,7 @@ def home(request):
 def about(request):
   return render(request, 'about.html')
 
+@login_required
 def characters_index(request):
   characters = Character.objects.all()
   return render(request, 'characters/index.html',{
