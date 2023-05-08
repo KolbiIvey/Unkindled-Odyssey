@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
+
 
 
 STARTING_CLASS = (
@@ -43,3 +45,12 @@ class Character(models.Model):
 
     def starting_attributes(self):
         return STARTING_ATTRIBUTES[self.starting_class]
+    
+    def __str__(self):
+        return f'{self.name} ({self.id})'
+    
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'character_id': self.id})
+    
+
+

@@ -14,6 +14,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 
+
 def home(request):
   return render(request, 'home.html')
 
@@ -21,12 +22,22 @@ def home(request):
 def about(request):
   return render(request, 'about.html')
 
+
+
 @login_required
 def characters_index(request):
   characters = Character.objects.all()
   return render(request, 'characters/index.html',{
     'characters': characters
   })
+
+def characters_detail(request, character_id):
+  character = Character.objects.get(id=character_id)
+  return render(request, 'characters/detail.html', {
+    'character': character
+  })
+  
+
 
 def signup(request):
   error_message = ''
@@ -51,4 +62,10 @@ def signup(request):
 class CharacterCreate(CreateView):
   model = Character
   form_class = CharacterForm
-  template_name = 'ch'
+  template_name = 'main_app/characters_create.html'
+
+  def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+    

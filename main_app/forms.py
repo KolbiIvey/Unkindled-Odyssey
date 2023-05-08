@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Character, STARTING_CLASS
+from .models import Character
 
 
 class CharacterForm(ModelForm):
