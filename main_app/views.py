@@ -72,6 +72,26 @@ def character_story(request, character_id):
     character = Character.objects.get(id=character_id)
 
     openai.api_key = API_KEY
-  
+    
+    #generate story using open ai, prompt should be something about dark souls universe
+    prompt = f"Generate a short story about {character.name} in any of the dark souls games in less than 500 characters"
+    response = openai.Completion.create(
+       engine="text-davinci-002",
+       prompt=prompt,
+       max_tokens=200,
+       n=1,
+       stop=None,
+       temperature=0.7,
+    )
+
+    #grabbing the story from the open ai response
+    story = response.choices[0].text.strip()
+
+    return render(request, 'characters/detail.html', {
+       'character': character,
+       'story': story
+    })
+
+
 
     
