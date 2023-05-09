@@ -16,5 +16,10 @@
         <p>Level: {{ character.level }}</p>
     </div>
 </div>
+<!-- adding form for button that will generate story when clicked-->
+<form method="POST" action="{% url 'character_story' character.id %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">Generate Story</button>
+</form>
 
 {% endblock %}
