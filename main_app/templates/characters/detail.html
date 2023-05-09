@@ -17,9 +17,16 @@
     </div>
 </div>
 <!-- adding form for button that will generate story when clicked-->
-<form method="POST" action="{% url 'character_story' character.id %}story/">
+<form method="POST" action="{% url 'character_story' character.id %}">
     {% csrf_token %}
     <button type="submit" class="btn btn-primary">Generate Story</button>
 </form>
-
+{% if story %}
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{character.name}}'s Adventure Thus Far</span>
+            <p>{{story}}</p>
+        </div>
+    </div>
+{% endif %}
 {% endblock %}
