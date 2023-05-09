@@ -16,6 +16,7 @@ API_KEY = os.getenv('API_KEY')
 
 
 
+
 def home(request):
   return render(request, 'home.html')
 
