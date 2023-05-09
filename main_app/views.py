@@ -6,6 +6,14 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+import openai
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+API_KEY = os.getenv('API_KEY')
+
 
 
 def home(request):
@@ -61,7 +69,9 @@ class CharacterCreate(CreateView):
   
 
 def character_story(request, character_id):
-    pass
+    character = Character.objects.get(id=character_id)
+
+    openai.api_key = API_KEY
   
 
     
