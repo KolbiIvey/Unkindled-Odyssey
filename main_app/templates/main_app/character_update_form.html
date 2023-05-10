@@ -14,16 +14,24 @@
       <label for="{{ form.starting_class.id_for_label }}">Starting Class</label>
     </div>
     <div class="input-field">
+      {{ form.starting_weapon }}
+      <label for="{{ form.starting_weapon.id_for_label }}">Starting Weapon</label>
+    </div>
+    <div class="input-field">
+      {{ form.starting_gift }}
+      <label for="{{ form.starting_gift.id_for_label }}">Starting Gift</label>
+    </div>
+    <div class="input-field">
       {{ form.level }}
       <label for="{{ form.level.id_for_label }}">Level</label>
     </div>
-    <button type="submit" class="btn">Update</button>
+    <button type="submit" class="btn">Be Remade</button>
   </form>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('select');
-      var instances = M.FormSelect.init(elems);
+      const elems = document.querySelectorAll('select');
+      const instances = M.FormSelect.init(elems);
     });
   </script>
 
