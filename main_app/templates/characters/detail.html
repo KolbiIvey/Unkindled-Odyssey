@@ -15,45 +15,22 @@
         </ul>
         <p>Level: {{ character.level }}</p>
         <div class="card-action">
-            <a href="{% url 'character_update' character.id %}">Reallocate Attributes</a>
+            <a href="{% url 'character_update' character.id %}">Reallocate</a>
             <a href="{% url 'character_delete' character.id %}">Banish</a>
         </div>
+        <!-- adding form for button that will generate story when clicked-->
+        <form method="POST" action="{% url 'character_story' character.id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Generate Story</button>
+        </form>
+        {% if story %}
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">{{character.name}}'s Adventure Thus Far</span>
+                    <p>{{story}}</p>
+                </div>
+            </div>
+        {% endif %}
     </div>
 </div>
-<!-- adding form for button that will generate story when clicked-->
-<form method="POST" action="{% url 'character_story' character.id %}" id="story-form">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-primary" id="generate-btn">Generate Story</button>
-    <!-- <button type="button" class="btn btn-primary d-none" id="new-story-btn">Generate New Story</button> -->
-</form>
-{% if story %}
-    <div class="card">
-        <div class="card-content">
-            <span class="card-title">{{character.name}}'s Adventure Thus Far</span>
-            <p>{{story}}</p>
-        </div>
-    </div>
-    <!-- <script>
-        //grabbing buttons
-        const genButton = document.getElementById('generate-btn');
-        const newStoryButton = document.getElementById('new-story-btn');
-
-        //hiding generate button and displaying new button 
-        genButton.classList.add('d-none');
-        newStoryButton.classList.remove('d-none');
-
-        //adding event listener for the new button
-        newStoryButton.addEventListener('click', () => {
-            //hiding the new buttuon and displaying the generate button
-            genButton.classList.remove('d-none');
-            newStoryButton.classList.add('d-none');
-
-            //need to reset the form and clear out the story
-            const form = document.getElementById('story-form');
-            form.reset();
-            const storyElement = document.querySelector('.card-content p')
-            storyElement.textContent = '';
-        });
-    </script> -->
-{% endif %}
 {% endblock %}
