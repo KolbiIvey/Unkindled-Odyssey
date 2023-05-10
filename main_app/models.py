@@ -31,6 +31,28 @@ STARTING_ATTRIBUTES = {
     'D': {'VIG': 10, 'ATT': 10, 'END': 10, 'VIT': 10, 'STR': 10, 'DEX': 10, 'INT': 10, 'FTH': 10, 'LCK': 10}
 }
 
+STARTING_WEAPONS = (
+    ('S', 'Straight Sword'),
+    ('K', 'Katana'),
+    ('G', 'Greatsword'),
+    ('A', 'Axe'),
+    ('C', 'Curved Sword'),
+    ('D', 'Dagger'),
+    ('H', 'Halberd'),
+    ('B', 'Bow'),
+    ('W', 'Whip'),
+    ('T', 'Talisman'),
+    ('Ss', 'Sorcerer\'s Staff'),
+)
+
+STARTING_GIFT = (
+    ('E', 'Ember'),
+    ('L', 'Life Ring'),
+    ('Y', 'Young White Branch'),
+    ('D', 'Divine Blessing'),
+    ('H', 'Human Pine Resin'),
+)
+
 
 class Character(models.Model):
     name = models.CharField(max_length=100)
@@ -39,6 +61,17 @@ class Character(models.Model):
         choices=STARTING_CLASS,
         default=[0][0]
     )
+    starting_weapon = models.CharField(
+        max_length=100,
+        choices=STARTING_WEAPONS,
+        default=STARTING_WEAPONS[0][0]
+    )
+    starting_gift = models.CharField(
+        max_length=1,
+        choices=STARTING_GIFT,
+        default=STARTING_GIFT[0][0]
+    )
+
     level = models.IntegerField()
     story = models.TextField(blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
