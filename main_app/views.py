@@ -34,7 +34,8 @@ def characters_index(request):
 def characters_detail(request, character_id):
   character = Character.objects.get(id=character_id)
   return render(request, 'characters/detail.html', {
-    'character': character
+    'character': character,
+    'story': character.story
   })
 
 
@@ -93,6 +94,8 @@ def character_story(request, character_id):
     )
 
     story = response.choices[0].text.strip()
+    character.story = story
+    character.save()
 
     return render(request, 'characters/detail.html', {
        'character': character,
