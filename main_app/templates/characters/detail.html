@@ -14,6 +14,10 @@
         {% endfor %}
         </ul>
         <p>Level: {{ character.level }}</p>
+        <div class="card-action">
+            <a href="{% url 'character_update' character.id %}">Reallocate Attributes</a>
+            <a href="{% url 'character_delete' character.id %}">Banish</a>
+        </div>
     </div>
 </div>
 <!-- adding form for button that will generate story when clicked-->
