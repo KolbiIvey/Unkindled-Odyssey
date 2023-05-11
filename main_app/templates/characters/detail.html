@@ -36,17 +36,20 @@
     </div>
 </div>
 
-<!-- <script>
-    const form = document.getElementById('story-form');
-    const button = form.querySelector('button');
-
-    if ("{{ story }}" !== "") {
-        button.textContent = "Generate New Story";
+<style>
+    .card {
+        background-color: #343a40;
+        color: #f8f9fa;
+        padding: 10px;
     }
 
-    form.addEventListener('submit', () => {
-        button.textContent = "Generate New Story";
-    });
-</script> -->
+    .card-title {
+        color: #f8f9fa;
+    }
+
+    .card-action a {
+        color: #f8f9fa;
+    }
+</style>
 
 {% endblock %}
