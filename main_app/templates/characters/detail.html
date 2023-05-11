@@ -28,7 +28,7 @@
         {% if story %}
             <div class="card">
                 <div class="card-content">
-                    <span class="card-title">{{character.name}}'s Adventure Thus Far</span>
+                    <span class="card-title">{{character.name}}'s Story</span>
                     <p>{{story}}</p>
                 </div>
             </div>
@@ -36,7 +36,7 @@
     </div>
 </div>
 
-<script>
+<!-- <script>
     const form = document.getElementById('story-form');
     const button = form.querySelector('button');
 
@@ -47,6 +47,6 @@
     form.addEventListener('submit', () => {
         button.textContent = "Generate New Story";
     });
-</script>
+</script> -->
 
 {% endblock %}

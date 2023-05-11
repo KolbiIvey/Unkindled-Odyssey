@@ -83,14 +83,14 @@ def character_story(request, character_id):
   
     openai.api_key = API_KEY
     
-    prompt = f"Generate a short story about {character.name}, a {character.starting_class}  in the Dark Souls universe. {character.name} is a skilled warrior, wielding {character.starting_weapon} with deadly precision. Their journey takes them through treacherous landscapes, battling fierce bosses and fending off merciless invaders. But despite the many challenges they face, {character.name} never loses sight of their ultimate goal: to link the first flame and save their world from eternal darkness."
+    prompt = f"Generate a short story about {character.name} in the story of of the video game Dark Souls 3, where {character.name} is a {character.get_starting_class_display()} brandishing a {character.get_starting_weapon_display()}, please make the story 2 paragraphs long."
     response = openai.Completion.create(
        engine="text-davinci-002",
        prompt=prompt,
-       max_tokens=500,
+       max_tokens=3000,
        n=1,
        stop=None,
-       temperature=0.7,
+       temperature=0.9,
     )
 
     story = response.choices[0].text.strip()
