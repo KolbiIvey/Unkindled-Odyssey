@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{ character.name }}'s Details</h1>
+
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">{{ character.name }}</span>
+        <p>Starting Class: {{ character.get_starting_class_display }}</p>
+        <p>Starting Attributes:</p>
+        <ul>
+        {% for attr, value in character.starting_attributes.items %}
+            <li>{{ attr }}: {{ value }}</li>
+        {% endfor %}
+        </ul>
+        <p>Weapon: {{character.get_starting_weapon_display}}</p>
+        <p>Gift: {{character.get_starting_gift_display}}</p>
+        <p>Level: {{ character.level }}</p>
+        <div class="card-action">
+            <a href="{% url 'character_update' character.id %}">Reallocate Attributes</a>
+            <a href="{% url 'character_delete' character.id %}">Banish</a>
+        </div>
+        <!-- adding form for button that will generate story when clicked-->
+        <form method="POST" action="{% url 'character_story' character.id %}" id="story-form">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Generate Story</button>
+        </form>
+        {% if story %}
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">{{character.name}}'s Story</span>
+                    <p>{{story}}</p>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+    .card {
+        background-color: #343a40;
+        color: #f8f9fa;
+        padding: 10px;
+    }
+
+    .card-title {
+        color: #f8f9fa;
+    }
+
+    .card-action a {
+        color: #f8f9fa;
+    }
+</style>
+
+{% endblock %}
