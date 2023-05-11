@@ -1,1 +1,1 @@
-web: gunicorn <unkindledodyssey>.wsgi
+web: gunicorn unkindledodyssey.wsgi
