@@ -7,6 +7,28 @@
     <div class="card-content">
         <span class="card-title">{{ character.name }}</span>
         <p>Starting Class: {{ character.get_starting_class_display }}</p>
+        {% if character.starting_class == 'K' %}
+            <img src="../../static/knight.jpeg" alt="Knight">
+        {% elif character.starting_class == 'A' %}
+            <img src="../../static/assassin.jpeg" alt="Assassin">
+        {% elif character.starting_class == 'C' %}
+            <img src="../../static/cleric.jpeg" alt="Cleric">
+        {% elif character.starting_class == 'D' %}
+            <img src="../../static/deprived.jpeg" alt="Deprived">
+        {% elif character.starting_class == 'H' %}
+            <img src="../../static/herald.jpeg" alt="Herald">
+        {% elif character.starting_class == 'M' %}
+            <img src="../../static/mercenary.jpeg" alt="Mercenary">
+        {% elif character.starting_class == 'P' %}
+            <img src="../../static/pyromancer.jpeg" alt="Pyromancer">
+        {% elif character.starting_class == 'S' %}
+            <img src="../../static/sorcerer.jpeg" alt="Sorcerer">
+        {% elif character.starting_class == 'T' %}
+            <img src="../../static/thief.jpeg" alt="Thief">
+        {% elif character.starting_class == 'W' %}
+            <img src="../../static/warrior.jpeg" alt="Warrior">
+        {% endif %}
+
         <p>Starting Attributes:</p>
         <ul>
         {% for attr, value in character.starting_attributes.items %}
@@ -49,6 +71,16 @@
 
     .card-action a {
         color: #f8f9fa;
+    }
+
+    .btn {
+      font-family: "Old English Text MT", "Blackletter", serif;
+      background-color: black;
+    }
+  
+    .btn:hover,
+    .btn:focus {
+      background-color: #ff9900 !important;
     }
 </style>
 

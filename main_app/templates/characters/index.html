@@ -3,18 +3,51 @@
 
 <h1>My Characters</h1>
 
-{% for character in characters %}
-    <a href="{% url 'detail' character_id=character.id %}">
-        <div class="card">
-            <div class="card-content">
-                <span class="card-title">{{ character.name }}</span>
-                <p>Starting Class: {{ character.get_starting_class_display|linebreaks}}</p>
-                <p>Level: {{ character.level }}</p>
-            </div>
-        </div>
-    </a>
-{% endfor %}
 
+<div class="card-container">
+    {% for character in characters %}
+      <a href="{% url 'detail' character_id=character.id %}">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">{{ character.name }}</span>
+            <p>Starting Class: {{ character.get_starting_class_display|linebreaks}}</p>
+            <p>Level: {{ character.level }}</p>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+</div>
+
+<style>
+    h1 {
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  border: 1px solid #000;
+  background-color: #222;
+  margin: 20px;
+  max-width: 500px; /* Set a maximum width for the card */
+  width: 100%; /* Make the card fill its container */
+  padding: 10px;
+}
+
+.card-title {
+  color: #EEE;
+  font-family: "Old English Text MT", "Blackletter", serif;
+  font-size: 30px;
+}
+
+p {
+  color: #EEE;
+}
+</style>
 
 
 {% endblock %}

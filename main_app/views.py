@@ -7,10 +7,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 import openai
-from dotenv import load_dotenv
 import os
 
-load_dotenv()
+
 
 API_KEY = os.environ['API_KEY']
 
@@ -25,12 +24,10 @@ def about(request):
 
 @login_required
 def characters_index(request):
-  characters = Character.objects.all()
-  return render(request, 'characters/index.html',{
-    'characters': characters
-  })
+    characters = Character.objects.filter(user=request.user)
+    return render(request, 'characters/index.html', {'characters': characters})
 
-
+@login_required
 def characters_detail(request, character_id):
   character = Character.objects.get(id=character_id)
   return render(request, 'characters/detail.html', {
@@ -54,7 +51,7 @@ def signup(request):
   return render(request, 'registration/signup.html', context)
 
 
-class CharacterCreate(CreateView):
+class CharacterCreate(LoginRequiredMixin, CreateView):
   model = Character
   form_class = CharacterForm
   template_name = 'main_app/characters_create.html'
@@ -64,19 +61,19 @@ class CharacterCreate(CreateView):
         return super().form_valid(form)
 
 
-class CharacterUpdate(UpdateView):
+class CharacterUpdate(LoginRequiredMixin, UpdateView):
     model = Character
     form_class = CharacterForm
     template_name = 'main_app/character_update_form.html'
     success_url = '/characters'
 
 
-class CharacterDelete(DeleteView):
+class CharacterDelete(LoginRequiredMixin, DeleteView):
     model = Character
     success_url = '/characters'
 
 
-
+@login_required
 def character_story(request, character_id):
     character = Character.objects.get(id=character_id)
 
