@@ -30,9 +30,15 @@ def characters_index(request):
 @login_required
 def characters_detail(request, character_id):
   character = Character.objects.get(id=character_id)
+  # image_url = None
+  # if character.starting_class == 'K':
+  #    image_url = "../../static/knight.jpeg"
+  # # elif character.starting_class == '':
+  # #    image_url = ../../
   return render(request, 'characters/detail.html', {
     'character': character,
-    'story': character.story
+    'story': character.story,
+    # 'image_url': image_url
   })
 
 
@@ -80,7 +86,7 @@ def character_story(request, character_id):
   
     openai.api_key = API_KEY
     
-    prompt = f"Generate a short story about {character.name} in the story of of the video game Dark Souls 3, where {character.name} is a {character.get_starting_class_display()} brandishing a {character.get_starting_weapon_display()}, please make the story 2 paragraphs long."
+    prompt = f"Generate a short story about {character.name} in the story of of the video game Dark Souls 3, where {character.name} is a {character.get_starting_class_display()} brandishing a {character.get_starting_weapon_display()}, please make the story 2 paragraphs long, and sometimes kill the character."
     response = openai.Completion.create(
        engine="text-davinci-002",
        prompt=prompt,
@@ -100,4 +106,3 @@ def character_story(request, character_id):
     })
 
 
-    

@@ -1,21 +1,22 @@
 {% extends 'base.html' %}
+
 {% block content %}
-
-<h1>My Characters</h1>
-
+<h1>Chosen Undead</h1>
 
 <div class="card-container">
-    {% for character in characters %}
-      <a href="{% url 'detail' character_id=character.id %}">
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title">{{ character.name }}</span>
-            <p>Starting Class: {{ character.get_starting_class_display|linebreaks}}</p>
-            <p>Level: {{ character.level }}</p>
-          </div>
-        </div>
-      </a>
-    {% endfor %}
+  {% for character in characters %}
+  <form method="GET" action="{% url 'detail' character_id=character.id %}">
+    <button type="submit" class="card">
+      <div class="card-content">
+        <span class="card-title">{{ character.name }}</span>
+        <p>Class: {{ character.get_starting_class_display }}</p>
+        <p>Level: {{ character.level }}</p>
+      </div>
+      <div class="card-overlay"></div>
+      <span class="card-link-text">View Details</span>
+    </button>
+  </form>
+  {% endfor %}
 </div>
 
 <style>
@@ -27,15 +28,18 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
+} 
+
 
 .card {
-  border: 1px solid #000;
+  display: block;
+  position: relative;
   background-color: #222;
-  margin: 20px;
-  max-width: 500px; /* Set a maximum width for the card */
-  width: 100%; /* Make the card fill its container */
-  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 6px;
+  margin: 5px;
+  text-align: left;
 }
 
 .card-title {
@@ -47,6 +51,40 @@
 p {
   color: #EEE;
 }
+
+.card:hover {
+  cursor: pointer;
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-link-text {
+  
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+}
+
 </style>
 
 

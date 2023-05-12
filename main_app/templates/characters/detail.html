@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
 <h1>{{ character.name }}'s Details</h1>
@@ -6,30 +7,30 @@
 <div class="card">
     <div class="card-content">
         <span class="card-title">{{ character.name }}</span>
-        <p>Starting Class: {{ character.get_starting_class_display }}</p>
+        <p>Class: {{ character.get_starting_class_display }}</p>
         {% if character.starting_class == 'K' %}
-            <img src="../../static/knight.jpeg" alt="Knight">
-        {% elif character.starting_class == 'A' %}
-            <img src="../../static/assassin.jpeg" alt="Assassin">
-        {% elif character.starting_class == 'C' %}
-            <img src="../../static/cleric.jpeg" alt="Cleric">
-        {% elif character.starting_class == 'D' %}
-            <img src="../../static/deprived.jpeg" alt="Deprived">
-        {% elif character.starting_class == 'H' %}
-            <img src="../../static/herald.jpeg" alt="Herald">
-        {% elif character.starting_class == 'M' %}
-            <img src="../../static/mercenary.jpeg" alt="Mercenary">
-        {% elif character.starting_class == 'P' %}
-            <img src="../../static/pyromancer.jpeg" alt="Pyromancer">
-        {% elif character.starting_class == 'S' %}
-            <img src="../../static/sorcerer.jpeg" alt="Sorcerer">
-        {% elif character.starting_class == 'T' %}
-            <img src="../../static/thief.jpeg" alt="Thief">
-        {% elif character.starting_class == 'W' %}
-            <img src="../../static/warrior.jpeg" alt="Warrior">
-        {% endif %}
+        <img src="{% static 'knight.jpeg' %}" alt="Knight">
+    {% elif character.starting_class == 'A' %}
+        <img src="{% static 'assassin.jpeg' %}" alt="Assassin">
+    {% elif character.starting_class == 'C' %}
+        <img src="{% static 'cleric.jpeg' %}" alt="Cleric">
+    {% elif character.starting_class == 'D' %}
+        <img src="{% static 'deprived.jpeg' %}" alt="Deprived">
+    {% elif character.starting_class == 'H' %}
+        <img src="{% static 'herald.jpeg' %}" alt="Herald">
+    {% elif character.starting_class == 'M' %}
+        <img src="{% static 'mercenary.jpeg' %}" alt="Mercenary">
+    {% elif character.starting_class == 'P' %}
+        <img src="{% static 'pyromancer.jpeg' %}" alt="Pyromancer">
+    {% elif character.starting_class == 'S' %}
+        <img src="{% static 'sorcerer.jpeg' %}" alt="Sorcerer">
+    {% elif character.starting_class == 'T' %}
+        <img src="{% static 'thief.jpeg' %}" alt="Thief">
+    {% elif character.starting_class == 'W' %}
+        <img src="{% static 'warrior.jpeg' %}" alt="Warrior">
+    {% endif %}
 
-        <p>Starting Attributes:</p>
+        <p>Attributes:</p>
         <ul>
         {% for attr, value in character.starting_attributes.items %}
             <li>{{ attr }}: {{ value }}</li>
@@ -45,18 +46,18 @@
         <!-- adding form for button that will generate story when clicked-->
         <form method="POST" action="{% url 'character_story' character.id %}" id="story-form">
             {% csrf_token %}
-            <button type="submit" class="btn btn-primary">Generate Story</button>
+            <button type="submit" class="btn btn-primary">Touch Bloodstain</button>
         </form>
-        {% if story %}
-            <div class="card">
-                <div class="card-content">
-                    <span class="card-title">{{character.name}}'s Story</span>
-                    <p>{{story}}</p>
-                </div>
-            </div>
-        {% endif %}
     </div>
 </div>
+{% if story %}
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">{{character.name}}'s Story</span>
+        <p>{{story}}</p>
+        </div>
+    </div>
+{% endif %}
 
 <style>
     .card {
