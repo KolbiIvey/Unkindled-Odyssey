@@ -7,6 +7,10 @@ body {
     min-height: 100vh;
     flex-direction: column;
     background-color: #0f0f0f;
+    background-image: url(../eclipse.jpeg);
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    background-position: center;
     color: #fff;
     font-family: "Old English Text MT", "Blackletter", serif;
     margin: 0;
