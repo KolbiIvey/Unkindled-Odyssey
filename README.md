@@ -1,5 +1,5 @@
 # Unkindled-Odyssey
-![home page](../unkindledodyssey/main_app/static/home.png)
+![home page](/main_app/static/home.png)
 <br>
 
 
