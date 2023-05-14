@@ -3,9 +3,9 @@
 
 # Unkindled-Odyssey
 
-### Built by **[Kolbi Ivey](https://www.linkedin.com/in/kolbi-ivey-15b5631a8/)
+### Built by: **[Kolbi Ivey](https://www.linkedin.com/in/kolbi-ivey-15b5631a8/)**
 
-### Link to deployed app! **[Unkindled-Odyssey](https://unkindledodyssey.herokuapp.com/)
+### Link to deployed app: **[Unkindled-Odyssey](https://unkindledodyssey.herokuapp.com/)**
 
 
 # Technologies Used:
