@@ -3,6 +3,9 @@
 
 # Unkindled-Odyssey
 
+### Built by **[Kolbi Ivey](https://www.linkedin.com/in/kolbi-ivey-15b5631a8/)
+
+### Link to deployed app! **[Unkindled-Odyssey](https://unkindledodyssey.herokuapp.com/)
 
 
 # Technologies Used:
@@ -15,7 +18,7 @@
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 ![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+
 
 ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
