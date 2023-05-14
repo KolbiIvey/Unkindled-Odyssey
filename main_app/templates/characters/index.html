@@ -20,7 +20,7 @@
 </div>
 
 <style>
-    h1 {
+h1 {
   text-align: center;
 }
 
@@ -30,32 +30,33 @@
   justify-content: center;
 } 
 
-
 .card {
   display: block;
   position: relative;
-  background-color: #222;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), #222;
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   padding: 6px;
   margin: 5px;
   text-align: left;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .card-title {
-  color: #EEE;
+  color: #ff9900;
   font-family: "Old English Text MT", "Blackletter", serif;
-  font-size: 30px;
+  font-size: 36px;
+  margin-top: 8px;
 }
 
-p {
-  color: #EEE;
+.card-content p {
+  color: #ccc;
 }
 
 .card:hover {
   cursor: pointer;
-  transform: translateY(-4px);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .card-overlay {
@@ -75,7 +76,6 @@ p {
 }
 
 .card-link-text {
-  
   font-family: "Old English Text MT", "Blackletter", serif;
   top: 50%;
   left: 50%;
@@ -83,9 +83,6 @@ p {
   font-weight: bold;
   font-size: 16px;
   color: #fff;
-  text-align: center;
-}
-
 </style>
 
 
