@@ -26,5 +26,5 @@
 
 
 
- [Trello] https://trello.com/b/EblsAQBN/unkindled-odyssey
- [Wireframe/ERD] https://whimsical.com/CPw5Uo9ix1XHVb9P3erB16
+ [Trello](https://trello.com/b/EblsAQBN/unkindled-odyssey)
+ [Wireframe/ERD](https://whimsical.com/CPw5Uo9ix1XHVb9P3erB16)
