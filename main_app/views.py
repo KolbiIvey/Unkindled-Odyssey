@@ -111,5 +111,3 @@ def character_story(request, character_id):
        'character': character,
        'story': story
     })
-
-

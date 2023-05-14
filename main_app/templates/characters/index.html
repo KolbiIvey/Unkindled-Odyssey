@@ -1,26 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Chosen Undead</h1>
-
-<div class="card-container">
-  {% for character in characters %}
-  <form method="GET" action="{% url 'detail' character_id=character.id %}">
-    <button type="submit" class="card">
-      <div class="card-content">
-        <span class="card-title">{{ character.name }}</span>
-        <p>Class: {{ character.get_starting_class_display }}</p>
-        <p>Level: {{ character.level }}</p>
-      </div>
-      <div class="card-overlay"></div>
-      <span class="card-link-text">View Attributes</span>
-    </button>
-  </form>
-  {% endfor %}
-</div>
-
+{% if characters %}
+  <h1>Chosen Undead</h1>
+  <div class="card-container">
+    {% for character in characters %}
+    <form method="GET" action="{% url 'detail' character_id=character.id %}">
+      <button type="submit" class="card">
+        <div class="card-content">
+          <span class="card-title">{{ character.name }}</span>
+          <p>Class: {{ character.get_starting_class_display }}</p>
+          <p>Level: {{ character.level }}</p>
+        </div>
+        <div class="card-overlay"></div>
+        <span class="card-link-text">View Attributes</span>
+      </button>
+    </form>
+    {% endfor %}
+  </div>
+{% else %}
+  <h1>You have no Chosen Undead</h1>
+  <h3>Create some new undead to begin their journey!</h3>
+{% endif %}
 <style>
   h1 {
+    text-align: center;
+  }
+
+  h3 {
     text-align: center;
   }
 
