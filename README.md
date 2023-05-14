@@ -7,7 +7,7 @@
 
 # Technologies Used:
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
-![Maintainer](https://img.shields.io/badge/Maintainer-sally-blue)
+![Maintainer](https://img.shields.io/badge/Maintainer-Kolbi-blue)
 ![Ask](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)
 
 ![Django](https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif)
