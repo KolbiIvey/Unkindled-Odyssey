@@ -1,6 +1,7 @@
-<div align="center">
-# Unkindled-Odyssey
 # ![home page](/main_app/static/home.png)
+<div align="center">
+
+# Unkindled-Odyssey
 
 
 
