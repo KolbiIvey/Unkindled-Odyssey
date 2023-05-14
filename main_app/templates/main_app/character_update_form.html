@@ -1,50 +1,50 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Reallocate {{ character.name }}'s Attributes</h1>
+<h1>Reallocate {{ character.name }}'s Attributes</h1>
 
-  <div class="row">
-    <form class="col s12 m6 offset-m3" method="POST" action="{% url 'character_update' pk=object.pk %}">
-      {% csrf_token %}
-      <div class="row">
-        <div class="input-field col s12">
-          {{ form.name }}
-          <label for="{{ form.name.id_for_label }}">Name</label>
-        </div>
+<div class="row">
+  <form class="col s12 m6 offset-m3" method="POST" action="{% url 'character_update' pk=object.pk %}">
+    {% csrf_token %}
+    <div class="row">
+      <div class="input-field col s12">
+        {{ form.name }}
+        <label for="{{ form.name.id_for_label }}">Name</label>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          {{ form.starting_class }}
-          <label for="{{ form.starting_class.id_for_label }}">Starting Class</label>
-        </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        {{ form.starting_class }}
+        <label for="{{ form.starting_class.id_for_label }}">Starting Class</label>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          {{ form.starting_weapon }}
-          <label for="{{ form.starting_weapon.id_for_label }}">Starting Weapon</label>
-        </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        {{ form.starting_weapon }}
+        <label for="{{ form.starting_weapon.id_for_label }}">Starting Weapon</label>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          {{ form.starting_gift }}
-          <label for="{{ form.starting_gift.id_for_label }}">Starting Gift</label>
-        </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        {{ form.starting_gift }}
+        <label for="{{ form.starting_gift.id_for_label }}">Starting Gift</label>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          {{ form.level }}
-          <label for="{{ form.level.id_for_label }}">Level</label>
-        </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        {{ form.level }}
+        <label for="{{ form.level.id_for_label }}">Level</label>
       </div>
-      <div class="row">
-        <div class="col s12 center-align">
-          <button type="submit" class="btn btn-large waves-effect waves-light black darken-4">Be Remade</button>
-        </div>
+    </div>
+    <div class="row">
+      <div class="col s12 center-align">
+        <button type="submit" class="btn btn-large waves-effect waves-light black darken-4">Be Remade</button>
       </div>
-    </form>
-  </div>
+    </div>
+  </form>
+</div>
 
-  <style>
+<style>
     input[type=text],
     input[type=number],
     select {
@@ -111,13 +111,14 @@
   }
 }
 
-  </style>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const elems = document.querySelectorAll('select');
-      const instances = M.FormSelect.init(elems);
-    });
-  </script>
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const elems = document.querySelectorAll('select');
+    const instances = M.FormSelect.init(elems);
+  });
+</script>
 
 {% endblock %}

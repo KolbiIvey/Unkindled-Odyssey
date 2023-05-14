@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Create Chosen Undead</h1>
+  <h1>Create A New Chosen Undead</h1>
 
 <div class="row">
   <form class="col s12 m6 offset-m3" method="post" action="{% url 'characters_create' %}">
@@ -44,80 +44,82 @@
   </form>
 </div>
 
-  <style>
-    input[type=text],
-    input[type=number],
-    select {
-      color: #f8f9fa !important;
-      font-family: "Old English Text MT", "Blackletter", serif;
-    }
-  
-    label {
-      color: #f8f9fa;
-      font-family: "Old English Text MT", "Blackletter", serif;
-    }
-  
-    .row {
-      margin-bottom: 20px;
-    }
-  
-    .input-field input[type=text]:focus + label,
-    .input-field input[type=number]:focus + label,
-    .input-field select:focus + label {
-      color: #f8f9fa !important;
-    }
-  
-    .input-field input[type=text]:focus,
-    .input-field input[type=number]:focus,
-    .input-field select:focus {
-      border-bottom: 1px solid #f8f9fa !important;
-      box-shadow: 0 1px 0 0 #f8f9fa !important;
-    }
-    
-    .btn {
-      font-family: "Old English Text MT", "Blackletter", serif;
-      animation: fires 1s ease-in-out infinite alternate;
-    }
-  
-    .btn:hover,
-    .btn:focus {
-      background-color: #ff9900 !important;
-    }
+<style>
+  input[type=text],
+  input[type=number],
+  select {
+    color: #f8f9fa !important;
+    font-family: "Old English Text MT", "Blackletter", serif;
+  }
 
-    @keyframes fires {
-  0% {
-    background-color: #ff9900;
-    box-shadow: 0 0 10px #fff, 0 0 20px #ff9900, 0 0 30px #ff9900, 0 0 40px #ff9900, 0 0 50px #ff9900, 0 0 60px #ff9900;
+  label {
+    color: #f8f9fa;
+    font-family: "Old English Text MT", "Blackletter", serif;
   }
-  20% {
-    background-color: #ffcc33;
-    box-shadow: 0 0 10px #fff, 0 0 20px #ffcc33, 0 0 30px #ffcc33, 0 0 40px #ffcc33, 0 0 50px #ff9900, 0 0 60px #ff9900;
+
+  .row {
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
-  40% {
-    background-color: #ff9933;
-    box-shadow: 0 0 10px #fff, 0 0 20px #ff9933, 0 0 30px #ff9933, 0 0 40px #ff9933, 0 0 50px #ffcc33, 0 0 60px #ffcc33;
+
+  .input-field input[type=text]:focus + label,
+  .input-field input[type=number]:focus + label,
+  .input-field select:focus + label {
+    color: #f8f9fa !important;
   }
-  60% {
-    background-color: #ff3300;
-    box-shadow: 0 0 10px #fff, 0 0 20px #ff3300, 0 0 30px #ff3300, 0 0 40px #ff9933, 0 0 50px #ff9933, 0 0 60px #ffcc33;
+
+  .input-field input[type=text]:focus,
+  .input-field input[type=number]:focus,
+  .input-field select:focus {
+    border-bottom: 1px solid #f8f9fa !important;
+    box-shadow: 0 1px 0 0 #f8f9fa !important;
   }
-  80% {
-    background-color: #ff0000;
-    box-shadow: 0 0 10px #fff, 0 0 20px #ff0000, 0 0 30px #ff3300, 0 0 40px #ff3300, 0 0 50px #ff9933, 0 0 60px #ffcc33;
+  
+  .btn {
+    font-family: "Old English Text MT", "Blackletter", serif;
+    animation: fires 1s ease-in-out infinite alternate;
   }
-  100% {
-    background-color: #ff9900;
-    box-shadow: 0 0 10px #fff, 0 0 20px #ff9900, 0 0 30px #ff9900, 0 0 40px #ff9900, 0 0 50px #ff9900, 0 0 60px #ff9900;
+
+  .btn:hover,
+  .btn:focus {
+    background-color: #ff9900 !important;
   }
+
+  @keyframes fires {
+
+    0% {
+      background-color: #ff9900;
+      box-shadow: 0 0 10px #fff, 0 0 20px #ff9900, 0 0 30px #ff9900, 0 0 40px #ff9900, 0 0 50px #ff9900, 0 0 60px #ff9900;
+    }
+    20% {
+      background-color: #ffcc33;
+      box-shadow: 0 0 10px #fff, 0 0 20px #ffcc33, 0 0 30px #ffcc33, 0 0 40px #ffcc33, 0 0 50px #ff9900, 0 0 60px #ff9900;
+    }
+    40% {
+      background-color: #ff9933;
+      box-shadow: 0 0 10px #fff, 0 0 20px #ff9933, 0 0 30px #ff9933, 0 0 40px #ff9933, 0 0 50px #ffcc33, 0 0 60px #ffcc33;
+    }
+    60% {
+      background-color: #ff3300;
+      box-shadow: 0 0 10px #fff, 0 0 20px #ff3300, 0 0 30px #ff3300, 0 0 40px #ff9933, 0 0 50px #ff9933, 0 0 60px #ffcc33;
+    }
+    80% {
+      background-color: #ff0000;
+      box-shadow: 0 0 10px #fff, 0 0 20px #ff0000, 0 0 30px #ff3300, 0 0 40px #ff3300, 0 0 50px #ff9933, 0 0 60px #ffcc33;
+    }
+    100% {
+      background-color: #ff9900;
+      box-shadow: 0 0 10px #fff, 0 0 20px #ff9900, 0 0 30px #ff9900, 0 0 40px #ff9900, 0 0 50px #ff9900, 0 0 60px #ff9900;
+    }
 }
 
-  </style>
+</style>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const elems = document.querySelectorAll('select');
-      const instances = M.FormSelect.init(elems);
-    });
-  </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const elems = document.querySelectorAll('select');
+    const instances = M.FormSelect.init(elems);
+  });
+</script>
 
 {% endblock %}

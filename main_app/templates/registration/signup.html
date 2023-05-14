@@ -1,14 +1,47 @@
 {% extends 'base.html' %}
+
 {% block content %}
 
-<h1>Sign Up</h1>
+<section class="signup-section">
+  <div class="signup-container">
+    <h1>Create Account</h1>
+    <p class="red-text">{{ error_message }}</p>
+    <form method="POST" action="{% url 'signup' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" class="btn" value="Sign Up">
+    </form>
+  </div>
+</section>
 
-<p class="red-text">{{ error_message }}</p>
+<style>
 
-<form method="POST" action="{% url 'signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" class="btn" value="Sign Up">
-</form>
+.signup-section {
+      background-color: #0f0f0f;
+      color: #fff;
+      text-align: center;
+      margin: 30px;
+      opacity: 0.9;
+      padding: 50px 120px;
+  }
+
+
+  .signup-section form input[type="text"],
+  .signup-section form input[type="password"] {
+    border: none;
+    border-bottom: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    padding: 5px 0;
+    width: 100%;
+  }
+
+  .btn:hover {
+    background-color: #c07228;
+  }
+
+</style>
 
 {% endblock %}

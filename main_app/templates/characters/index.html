@@ -20,69 +20,70 @@
 </div>
 
 <style>
-h1 {
-  text-align: center;
-}
+  h1 {
+    text-align: center;
+  }
 
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-} 
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  } 
 
-.card {
-  display: block;
-  position: relative;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), #222;
-  border-radius: 8px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 6px;
-  margin: 5px;
-  text-align: left;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
+  .card {
+    display: block;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), #222;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 6px;
+    margin: 5px;
+    text-align: left;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
 
-.card-title {
-  color: #ff9900;
-  font-family: "Old English Text MT", "Blackletter", serif;
-  font-size: 36px;
-  margin-top: 8px;
-}
+  .card-title {
+    color: #ff9900;
+    font-family: "Old English Text MT", "Blackletter", serif;
+    font-size: 36px;
+    margin-top: 8px;
+  }
 
-.card-content p {
-  color: #ccc;
-}
+  .card-content p {
+    color: #ccc;
+  }
 
-.card:hover {
-  cursor: pointer;
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-}
+  .card:hover {
+    cursor: pointer;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  }
 
-.card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
 
-.card:hover .card-overlay {
-  opacity: 1;
-}
+  .card:hover .card-overlay {
+    opacity: 1;
+  }
 
-.card-link-text {
-  font-family: "Old English Text MT", "Blackletter", serif;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: bold;
-  font-size: 16px;
-  color: #fff;
+  .card-link-text {
+    font-family: "Old English Text MT", "Blackletter", serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+  }
 </style>
 
 

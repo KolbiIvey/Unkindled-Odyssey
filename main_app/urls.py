@@ -12,6 +12,5 @@ urlpatterns = [
     path('characters/create/', views.CharacterCreate.as_view(), name='characters_create'),
     path('characters/<int:pk>/update/', views.CharacterUpdate.as_view(), name='character_update'),
     path('characters/<int:pk>/delete/', views.CharacterDelete.as_view(), name='character_delete'),
-
 ]
 

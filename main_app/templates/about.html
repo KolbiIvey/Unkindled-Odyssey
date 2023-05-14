@@ -1,11 +1,52 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>About Unkindled Odyssey</h1>
-<hr>
-<p>
-    Immerse yourself in the world of Dark Souls! Create a character with your name, starting class,
-     character level, and accompanying attributes, and watch as a short story about your
-     newly created character and their struggles unfolds before your eyes. Welcome, to Unkindled Odyssey.
-</p>
+<section class="about-section">
+    <div class="about-container">
+        <h1>About Unkindled Odyssey</h1>
+        <hr>
+        <p>
+            Immerse yourself in the world of Dark Souls! Create a character with your name, starting class,
+            character level, and accompanying attributes, as well as watch a short story about your
+            newly created character and their struggles unfolds before your eyes. Welcome, to Unkindled Odyssey.
+        </p>
+    </div>
+</section>
+
+<style>
+
+  .about-section {
+    padding: 50px 0;
+    background-color: #0f0f0f;
+    color: #fff;
+    text-align: center;
+    margin-top: 175px;
+    opacity: 0.9;
+  }
+
+  .about-section h1 {
+    font-size: 3rem;
+  }
+
+  .about-section hr {
+    border-color: #fff;
+    width: 30%;
+    margin: 20px auto;
+  }
+
+  .about-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 30px;
+  }
+
+  .about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+</style>
+
+
 {% endblock %}

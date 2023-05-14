@@ -1,6 +1,60 @@
 {% extends 'base.html' %}
+
 {% block content %}
+<section class="home-section">
+  <div class="home-container">
+    <h1>Welcome to Unkindled Odyssey</h1>
+    <hr>
+    {% if not user.is_authenticated %}
+    <p>Please Sign Up or Log In</p>
+    {% endif %}
+    <p>To get started, simply navigate to the "Create Character" page and fill in the form with your desired information.
+        Once you submit the form, you will be navigated to your newly created characters detail page. 
+        Once on this page you will be able to see all of your charcters detailed info such as class and accompanying
+        attributes, along with your charcters weapon, and gift. Underneath this information you will have the oprtunity to click a button 
+        that will generate a short story about your character! You can generate a new story to replace the curent one as much as you'd like 
+        until you feel your character has achieved a satisfying ending. 
+    </p>
+    <p>Check out the <a href="https://github.com/KolbiIvey/Unkindled-Odyssey">GitHub Repo</a> for future updates coming soon!</p>
+  </div>
+</section>
 
-<h1>Home</h1>
+<style>
 
+  .home-section {
+    padding: 50px 0;
+    background-color: #0f0f0f;
+    color: #fff;
+    text-align: center;
+    margin: 100px 50px 100px 50px;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-section h1 {
+    font-size: 3rem;
+  }
+
+  .home-section hr {
+    border-color: #fff;
+    width: 30%;
+    margin: 20px auto;
+  }
+
+  .home-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 30px;
+  }
+
+  .home-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+</style>
 {% endblock %}
