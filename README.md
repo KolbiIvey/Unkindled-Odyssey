@@ -35,11 +35,11 @@
 
  [Wireframe/ERD](https://whimsical.com/CPw5Uo9ix1XHVb9P3erB16)
 
-
+</div>
 
 ## My Favorite Code Snipit:
 The Charcter Modl for my project is by far my favorite bit of code. It was the very first thing I worked on.
-```
+```python
 STARTING_CLASS = (
     ('K', 'Knight'),
     ('M', 'Mercenary'),
