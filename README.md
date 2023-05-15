@@ -117,3 +117,12 @@ class Character(models.Model):
     story = models.TextField(blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 ```
+
+## Next Steps/Furture User Stories
+- AAU: I want to be able to comment on other user's stories and characters, and see comments on my own stories and characters.
+- AAU: I want to be able to view other user's characters and their generated stories.
+- AAU: I want to be able to search for characters by name, attributes, or other criteria.
+- AAU: I want to be able to sort characters by various attributes, such as level, strength, or dexterity.
+- AAU: I want to be able to save other users' characters to my profile.
+- AAU: I want to be able to receive notifications when someone comments on one of my stories or characters.
+- AAU: I want to be able to rate and review other users' characters and stories.
