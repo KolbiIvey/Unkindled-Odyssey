@@ -118,7 +118,7 @@ class Character(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 ```
 
-## Next Steps/Furture User Stories
+## Next Steps/Future User Stories
 - AAU: I want to be able to comment on other user's stories and characters, and see comments on my own stories and characters.
 - AAU: I want to be able to view other user's characters and their generated stories.
 - AAU: I want to be able to search for characters by name, attributes, or other criteria.

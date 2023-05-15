@@ -3,7 +3,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
     background-color: #0f0f0f;
-    background-image: url(../darksign.jpeg);
+    background-image: url(../irithyll.gif);
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -24,6 +24,7 @@ body {
 
   nav {
     background-color: #222;
+    opacity: 0.9;
   }
   
   nav a {
