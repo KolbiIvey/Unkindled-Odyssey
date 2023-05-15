@@ -7,7 +7,7 @@
 <div class="card">
     <div class="card-content">
         <span class="card-title">{{ character.name }}</span>
-        <h5>Class: {{ character.get_starting_class_display }}</h5>
+        <h6>Class: {{ character.get_starting_class_display }}</h6>
         {% if character.starting_class == 'K' %}
         <img src="{% static 'knight.jpeg' %}" alt="Knight">
     {% elif character.starting_class == 'A' %}
@@ -30,15 +30,15 @@
         <img src="{% static 'warrior.jpeg' %}" alt="Warrior">
     {% endif %}
 
-        <h5>Attributes:</h5>
+        <h6>Attributes:</h6>
         <ul>
         {% for attr, value in character.starting_attributes.items %}
             <li>{{ attr }}: {{ value }}</li>
         {% endfor %}
         </ul>
-        <h5>Weapon: {{character.get_starting_weapon_display}}</h5>
-        <h5>Gift: {{character.get_starting_gift_display}}</h5>
-        <h5>Level: {{ character.level }}</h5>
+        <h6>Weapon: {{character.get_starting_weapon_display}}</h6>
+        <h6>Gift: {{character.get_starting_gift_display}}</h6>
+        <h6>Level: {{ character.level }}</h6>
         <div class="card-action">
             <a href="{% url 'character_update' character.id %}">Reallocate Attributes</a>
             <a href="{% url 'character_delete' character.id %}">Banish</a>
@@ -54,7 +54,7 @@
 <div class="card">
     <div class="card-content">
         <span class="card-title">{{character.name}}'s Story</span>
-        <h5>{{story}}</h5>
+        <h6>{{story}}</h6>
         </div>
     </div>
 {% endif %}
