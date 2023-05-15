@@ -2,7 +2,7 @@
 
 # Unkindled-Odyssey
 
-# ![home page](/main_app/static/home.png)
+# ![home-page](/main_app/static/home.png)
 
 ## Description
 Immerse yourself in the world of Dark Souls! Create a character with your name, starting class,

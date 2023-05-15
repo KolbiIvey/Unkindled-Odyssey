@@ -59,15 +59,11 @@ body {
     color: #fff;
     font-size: 11px;
     padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
-  .page-footer a {
-    color: #fff;
-  }
-  
-  .page-footer a:hover {
-    color: #f00;
-  }
 
   h1 {
     text-align: center;
