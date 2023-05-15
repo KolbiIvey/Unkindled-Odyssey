@@ -33,12 +33,25 @@ newly created character and their struggles unfolds before your eyes. Welcome, t
 ![Heroku badge](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 
 
-
-
-
  [Trello](https://trello.com/b/EblsAQBN/unkindled-odyssey)
 
  [Wireframe/ERD](https://whimsical.com/CPw5Uo9ix1XHVb9P3erB16)
+
+
+## Additional Screenshots
+
+#### Character Index Page
+![index](/main_app/static/index-page.png)
+
+#### Character Creation Form
+![create](/main_app/static/create-form.png)
+
+#### Character Detail Page Part 1
+![detail-1](/main_app/static/detail-1.png)
+
+#### Character Detail Page Part 2
+![detail-2](/main_app/static/detail-2.png)
+
 
 </div>
 
