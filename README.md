@@ -1,15 +1,20 @@
 <div align="center">
 
+# Unkindled-Odyssey
+
 # ![home page](/main_app/static/home.png)
 
-# Unkindled-Odyssey
+## Description
+Immerse yourself in the world of Dark Souls! Create a character with your name, starting class,
+character level, and accompanying attributes, as well as watch a short story about your
+newly created character and their struggles unfolds before your eyes. Welcome, to Unkindled Odyssey.
 
 ### Built by: **[Kolbi Ivey](https://www.linkedin.com/in/kolbi-ivey-15b5631a8/)**
 
 ### Link to deployed app: **[Unkindled-Odyssey](https://unkindledodyssey.herokuapp.com/)**
 
 
-# Technologies Used:
+### Technologies Used:
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 ![Maintainer](https://img.shields.io/badge/Maintainer-Kolbi-blue)
 ![Ask](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)
@@ -38,7 +43,7 @@
 </div>
 
 ## My Favorite Code Snipit:
-The Charcter Modl for my project is by far my favorite bit of code. It was the very first thing I worked on.
+The Charcter Model for my project is by far my favorite bit of code. It was the very first thing I worked on.
 ```python
 STARTING_CLASS = (
     ('K', 'Knight'),
